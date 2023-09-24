@@ -13,7 +13,7 @@ class GetUrl:
         page = requests.get(self.url)
         soup = BeautifulSoup(page.content, "html.parser")
         results = soup.find_all('p')
-        with open('C:\\Users\\samxc\\OneDrive\\Desktop\\scraped.txt', 'w', encoding='utf-8') as f:
+        with open('C:\\{provide your desktop path here}\\scraped.txt', 'w', encoding='utf-8') as f:
             for ps in results:
                 f.write(ps.text)
             f.close()
@@ -26,7 +26,7 @@ class GetUrl:
         print("Would you like to read the scraped file?(y/n)")
         command = str(input())
         if command == "y" or command == "yes":
-            with open('C:\\Users\\samxc\\OneDrive\\Desktop\\scraped.txt', 'r', encoding='utf-8') as file:
+            with open('C:\\{provide your desktop path here}\\scraped.txt', 'r', encoding='utf-8') as file:
                 text_to_read = file.read()
             engine.setProperty('rate', 150)
             engine.say(text_to_read)
